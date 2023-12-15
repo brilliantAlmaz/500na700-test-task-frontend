@@ -590,6 +590,26 @@
       window.addEventListener('resize', newsLayoutFix)
 
    </script>
+
+   <!-- phone mask -->
+   <script src="https://unpkg.com/imask"></script>
+   <script>
+      // Считываем поле ввода
+      let phoneInput = document.querySelector(".message-input[placeholder='Телефон']");
+      // Считываем кнопку
+
+      // Создаем маску в инпуте
+      const phoneMask = new IMask(phoneInput, {
+         mask: "+{7}(000)000-00-00",
+      });
+
+      // Обработчик события для инпута
+      phoneInput.addEventListener("input", phoneInputHandler);
+
+
+
+
+   </script>
    <script src="./js/drop-menu.js"></script>
    <script src="./js/faq-acc.js"></script>
    <script src="./js/modal.js"></script>
