@@ -500,7 +500,7 @@
 
       });
 
-      let newsSwiper
+      let newsSwiper;
       if (window.innerWidth < 563) {
          newsSwiper = new Swiper('.mobile .news-swiper', {
             // Optional parameters
@@ -519,6 +519,26 @@
 
          });
       }
+      window.addEventListener('resize', () => {
+         if (window.innerWidth < 563) {
+            newsSwiper = new Swiper('.mobile .news-swiper', {
+               // Optional parameters
+               breakpoints: {
+                  563: {
+                     slidesPerView: 1,
+                  }
+               },
+               spaceBetween: 10,
+               loop: true,
+
+               navigation: {
+                  nextEl: '.news .swiper-button-next',
+                  prevEl: '.news .swiper-button-prev',
+               },
+
+            });
+         }
+      })
 
 
    </script>
